@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<proc:process xmlns:proc="http://www.example.org/proc" id="_RohpI4CYEemlY6iTndw9vg">
+<proc:process xmlns:proc="http://www.example.org/proc" id="_RohpI4CYEemlY6iTndw9vg" description="&#xD;&#xA;">
   <parameter id="_RohpJICYEemlY6iTndw9vg" name="RETENTION" type="String" value="30"/>
   <parameter id="_RohpJYCYEemlY6iTndw9vg" name="PILAR" type="String" value="WMS"/>
   <parameter id="_RohpJoCYEemlY6iTndw9vg" name="BU" type="String" value="001"/>
-  <actionCode id="_RohpJ4CYEemlY6iTndw9vg" description="" isBeginAction="false" name="Get Retention Period for Hbase Log" nbCycles="-1" toleratedError="false" technology="com.indy.engine.actionCodes.sqlToParameters">
+  <actionCode id="_RohpJ4CYEemlY6iTndw9vg" description="This step allows to calculate the recovery date for NiFi lineage data " isBeginAction="false" name="Get Retention Period for Hbase Log" nbCycles="-1" toleratedError="false" technology="com.indy.engine.actionCodes.sqlToParameters">
     <link id="_RohpKICYEemlY6iTndw9vg" executionType="OK" generationType="OK_KO" mandatory="1" targetId="_RohpKoCYEemlY6iTndw9vg"/>
     <metaDataLink id="_RohpKYCYEemlY6iTndw9vg" name="BV_TEC" target="../../serverConfigurations/teradataDwh1.md#_6M8VcBx_EeiIkZ0m_Wy3GA?fileId=_QNnCQDY8Eeevy5wHJGzQUA$type=md$name=BV_TEC?"/>
     <code>&lt;sqlToParameters>&#xD;
