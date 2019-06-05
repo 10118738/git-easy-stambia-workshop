@@ -13,7 +13,7 @@ select to_char(current_date - ${~/RETENTION}$, 'YYYYMMDDhhmmss')&#xD;
 &lt;/sqlToParameters></code>
   </actionCode>
   <actionCode id="_RohpKoCYEemlY6iTndw9vg" description="" isBeginAction="false" name="Create Table TKGEN_HBASE_LINEAGE" nbCycles="-1" toleratedError="true" technology="com.indy.engine.actionCodes.JdbcActionCodeI">
-    <link id="_XsfEkIFeEemQUJxAJ008CA" executionType="OK" generationType="OK_KO" mandatory="1" targetId="_RohpNYCYEemlY6iTndw9vg"/>
+    <link id="_b5p9YIelEemwbevodgMBaw" executionType="OK" generationType="OK_KO" mandatory="1" targetId="_VJPZgIelEemwbevodgMBaw"/>
     <metaDataLink id="_RohpLICYEemlY6iTndw9vg" name="BV_TEC" target="../01.metadata/TrdtBvTec.md#_RocwgICYEemlY6iTndw9vg?fileId=_RocwgICYEemlY6iTndw9vg$type=md$name=BV_TEC?"/>
     <parameter id="_RohpLYCYEemlY6iTndw9vg" name="SQL_ACTION_TYPE" type="String" value="DDL_DML"/>
     <parameter id="_RohpLoCYEemlY6iTndw9vg" name="SQL_CONNECTION" type="String"/>
@@ -42,6 +42,16 @@ select to_char(current_date - ${~/RETENTION}$, 'YYYYMMDDhhmmss')&#xD;
 	)&#xD;
 	UNIQUE PRIMARY INDEX (ROWKEY)&#xD;
 ;</code>
+  </actionCode>
+  <actionCode id="_VJPZgIelEemwbevodgMBaw" isBeginAction="false" name="SqlOperation" nbCycles="-1" toleratedError="false" technology="com.indy.engine.actionCodes.JdbcActionCodeI">
+    <link id="_cY2a0IelEemwbevodgMBaw" executionType="OK" generationType="OK_KO" mandatory="1" targetId="_RohpNYCYEemlY6iTndw9vg"/>
+    <metaDataLink id="_emzgIIelEemwbevodgMBaw" name="BV_TEC" target="../01.metadata/TrdtBvTec.md#_RocwgICYEemlY6iTndw9vg?fileId=_RocwgICYEemlY6iTndw9vg$type=md$name=BV_TEC?"/>
+    <parameter id="_VJssgIelEemwbevodgMBaw" name="SQL_ACTION_TYPE" type="String" value="DDL_DML"/>
+    <parameter id="_VJssgYelEemwbevodgMBaw" name="SQL_CONNECTION" type="String"/>
+    <code>DELETE FROM %x{md:physicalPath($BV_TEC,'schemaName')}x%.TKGEN_HBASE_LINEAGE&#xD;
+WHERE 1 = 1&#xD;
+AND ROWKEY LIKE '${../PILAR}$%'&#xD;
+AND BU = '${../BU}$'</code>
   </actionCode>
   <actionProcessRef id="_RohpNYCYEemlY6iTndw9vg" description="" enable="true" isBeginAction="false" name="UPSERT_TKGEN_HBASE_LINEAGE" nbCycles="-1" toleratedError="false" processMap="true" targetName="../03.mapping/TKGEN_HBASE_LINEAGE.map#_Roga7oCYEemlY6iTndw9vg?fileId=_Roga7oCYEemlY6iTndw9vg$name=TKGEN_HBASE_LINEAGE$type=map?"/>
 </proc:process>
